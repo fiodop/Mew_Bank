@@ -18,7 +18,7 @@ public class BankUser {
     )
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long moneyAmount;
+    private Long moneyAmount = 10000L;
     @OneToOne
     @JoinColumn(
             nullable = false,

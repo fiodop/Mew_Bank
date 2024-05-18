@@ -1,5 +1,6 @@
 package com.springboot.mew_bank.bankuser;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -8,7 +9,8 @@ import java.util.Optional;
 @Service
 @Transactional(readOnly = true)
 public class BankUserService{
-    BankUserRepository bankUserRepository;
+    @Autowired
+    private BankUserRepository bankUserRepository;
 
     public String checkBalance(Long id) {
          Optional<BankUser> user = bankUserRepository.findById(id);
